@@ -10,6 +10,7 @@ let name = "milan"
 let age = 18
 let isLoggedIn = false
 
+
 // nummber => 2 to power 53
 //bigint
 //string => ""
