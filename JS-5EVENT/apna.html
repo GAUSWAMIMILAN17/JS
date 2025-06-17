@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>Generate a random color</h3>
+    <br/>
+    <button>Generate Color</button>
+    <br/>
+    <div>This Is your new color</div>
+
+    <script src="test.js">
+        // // let btn = document.querySelector("button");
+// // console.dir(btn)
+
+// //onclick
+// // btn.onclick = function () {
+//     // console.log("button was clicked ")
+//     // alert("Hello ! My name Is Milan")
+// // }
+
+// function sayHello(){
+//     alert("hello")
+// }
+// function sayName(){
+//     alert("milan")
+// }
+// // btn.onclick = sayHello;
+
+// // if multiple button
+// let btns = document.querySelectorAll("button")
+
+// for(btn of btns){
+//     // btn.addEventListener("click", sayHello)
+//     // btn.addEventListener("click", sayName)
+//     // btn.addEventListener("dblclick",    function(){
+//     //     console.log("you double clicked")
+//     // });
+//     // btn.onclick = sayHello
+//     // btn.onmouseenter = function(){   //onmouseenter event
+//     //     console.log("click the")
+//     // }
+//     // btn.addEventListener("click", function(){    //addEventListener 
+//     //      console.log("button clicked")
+//     // })
+// }
+
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", function(){
+    let h3 = document.querySelector("h3");
+    let randomColor = getRandomColor();
+    h3.innerText = randomColor;
+    
+    let div = document.querySelector("div");
+    div.style.backgroundColor = randomColor
+});
+
+function getRandomColor(){
+    let red = Math.floor((Math.random())*255);
+    let green = Math.floor((Math.random())*255);
+    let blue = Math.floor((Math.random())*255);
+
+    let color = `rgb(${red},${green},${blue})`
+    return  color;
+}
+
+
+    </script>
+</body>
+</html>
