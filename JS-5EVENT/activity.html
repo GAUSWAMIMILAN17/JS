@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>To Do App</h1>
+    <input placeholder="enter your task">
+    <button>Add Task</button>
+    <ul>
+        <li>eat<button class="delete">delete</button></li>
+        <li>sleep<button class="delete">delete</button></li>
+    </ul>
+    
+    <script src="test.js">
+        
+//-----------------Activity-----------------------------------------------
+
+let btn = document.querySelector("button");
+let inp = document.querySelector("input");
+let ul = document.querySelector("ul");
+
+btn.addEventListener("click", function(){
+    let item = document.createElement("li")
+    item.innerText = inp.value;
+
+    let dltBtn = document.createElement("button");
+    dltBtn.innerText = "delete"
+    dltBtn.classList.add("delete")
+    
+    item.appendChild(dltBtn)
+    ul.appendChild(item)
+    inp.value = "";
+    
+})
+
+// let dltbtns =  document.querySelectorAll(".delete")
+
+// for (dltbtn of dltbtns){
+//     dltbtn.addEventListener("click", function(){
+//         let par = this .parentElement;
+//         par.remove();
+//         console.log(par)
+//     })
+// }
+
+//event delegation
+
+ul.addEventListener("click",function(event){
+    if(event.target.nodeName == "BUTTON"){
+        let listitem = event.target.parentElement;
+        listitem.remove();
+        console.log("delete")
+    }
+    else{
+        console.log("don't delete");
+    }
+    console.log("button clicked")
+} )
+
+    </script>
+</body>
+</html>
